@@ -68,13 +68,6 @@ check-lint:
 dist:
 	@python setup.py bdist_wheel
 
-
-# help: dist-test                      - test a whell distribution package
-.PHONY: dist-test
-dist-test: dist
-	@cd dist && ../tests/test-dist.bash ./fragmentsoup-*-py3-none-any.whl
-
-
 # help: dist-upload                    - upload a wheel distribution package
 .PHONY: dist-upload
 dist-upload:

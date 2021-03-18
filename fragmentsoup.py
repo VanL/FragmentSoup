@@ -2,9 +2,14 @@
 A wrapper for BeautifulSoup4 that restores the ability to work with HTML fragments
 """
 
-__version__ = "0.6.0"
+__version__ = "0.6.1"
 
-from bs4 import BeautifulSoup
+from bs4 import (
+    BeautifulSoup,
+    NavigableString,
+    Tag,
+    Comment,
+)  # pylint: disable=unused-import
 
 try:
     import lxml  # pylint: disable=unused-import

@@ -1,7 +1,7 @@
 [MASTER]
 
-# Use multiple processes to speed up Pylint.
-jobs=4
+# No need to use multiple processes to speed up Pylint.
+jobs=1
 
 # Pickle collected data for later comparisons.
 persistent=yes
@@ -343,3 +343,5 @@ valid-classmethod-first-arg=cls
 
 # List of valid names for the first argument in a metaclass class method.
 valid-metaclass-classmethod-first-arg=cls
+
+disable=bad-continuation, no-else-return

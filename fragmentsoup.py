@@ -7,22 +7,22 @@ __version__ = "0.6.0"
 from bs4 import BeautifulSoup
 
 try:
-    import lxml
+    import lxml  # pylint: disable=unused-import
 
-    parser = "lxml"
+    best_parser = "lxml"
 except ImportError:
     try:
-        import html5lib
+        import html5lib  # pylint: disable=unused-import
 
-        parser = "html5lib"
+        best_parser = "html5lib"
     except ImportError:
-        parser = "html.parser"
+        best_parser = "html.parser"
 
 
 def find_parser(*args, **kwargs):
     "If the user set a parser, use the same one"
     parsers = "lxml", "lxml-xml", "xml", "html5lib", "html.parser"
-    current_parser = parser
+    current_parser = best_parser
     if "features" in kwargs:
         current_parser = kwargs["features"]
         return current_parser
